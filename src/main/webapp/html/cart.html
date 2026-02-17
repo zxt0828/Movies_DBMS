@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabflix - Shopping Cart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="main.html" class="brand">🎬 Fabflix</a>
+        <div class="nav-links">
+            <a href="main.html">Home</a>
+            <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="section-card">
+            <h2>🛒 Shopping Cart</h2>
+            <table class="cart-table" id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body"></tbody>
+            </table>
+            <div class="cart-total" id="cart-total"></div>
+            <div style="text-align: right; margin-top: 15px;">
+                <a href="main.html" class="btn btn-outline">Continue Shopping</a>
+                <button class="btn" id="checkout-btn" style="margin-left: 10px;">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <!-- Checkout Form (hidden initially) -->
+        <div class="section-card" id="checkout-section" style="display:none; margin-top: 20px;">
+            <h2>💳 Payment Information</h2>
+            <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" id="cc-firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" id="cc-lastName" required>
+                </div>
+                <div class="form-group">
+                    <label>Credit Card Number</label>
+                    <input type="text" id="cc-number" required>
+                </div>
+                <div class="form-group">
+                    <label>Expiration Date (YYYY-MM-DD)</label>
+                    <input type="text" id="cc-expiration" placeholder="2025-01-01" required>
+                </div>
+                <button type="submit" class="btn">Complete Purchase</button>
+                <div class="error-msg" id="checkout-error" style="display:none;"></div>
+            </form>
+        </div>
+
+        <!-- Confirmation (hidden initially) -->
+        <div class="confirmation" id="confirmation-section" style="display:none;">
+            <h2>✅ Order Confirmed!</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">Thank you for your purchase.</p>
+            <table class="confirmation-table" id="confirmation-table">
+                <thead>
+                    <tr><th>Movie</th><th>Quantity</th><th>Subtotal</th></tr>
+                </thead>
+                <tbody id="confirmation-body"></tbody>
+            </table>
+            <div style="margin-top: 20px;">
+                <a href="main.html" class="btn">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

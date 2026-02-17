@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabflix - Movie Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="main.html" class="brand">🎬 Fabflix</a>
+        <div class="nav-links">
+            <a href="main.html">Home</a>
+            <a href="javascript:history.back()">← Back</a>
+            <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="detail-card" id="movie-detail">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/single-movie.js"></script>
+</body>
+</html>

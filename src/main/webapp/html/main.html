@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabflix - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="main.html" class="brand">🎬 Fabflix</a>
+        <div class="nav-links">
+            <a href="main.html">Home</a>
+            <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-sections">
+            <!-- Search Section -->
+            <div class="section-card">
+                <h2>🔍 Search Movies</h2>
+                <form class="search-form" id="search-form">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" placeholder="e.g. Terminator">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="text" id="year" name="year" placeholder="e.g. 2000">
+                    </div>
+                    <div class="form-group">
+                        <label for="director">Director</label>
+                        <input type="text" id="director" name="director" placeholder="e.g. Spielberg">
+                    </div>
+                    <div class="form-group">
+                        <label for="star">Star Name</label>
+                        <input type="text" id="star" name="star" placeholder="e.g. Tom Hanks">
+                    </div>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+            <!-- Browse Section -->
+            <div class="section-card">
+                <h2>📂 Browse by Genre</h2>
+                <div class="genre-links" id="genre-links">
+                    <!-- Populated by JS -->
+                </div>
+
+                <h2 style="margin-top: 25px;">🔤 Browse by Title</h2>
+                <div class="title-links" id="title-links">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

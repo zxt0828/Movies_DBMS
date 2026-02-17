@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabflix - Movie List</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="main.html" class="brand">🎬 Fabflix</a>
+        <div class="nav-links">
+            <a href="main.html">Home</a>
+            <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="result-info" id="result-info"></div>
+
+        <!-- Sort and Limit Controls -->
+        <div class="controls-bar">
+            <div class="sort-group">
+                <label>Sort by:</label>
+                <select id="sort-select">
+                    <option value="rating_desc_title_asc">Rating ↓, Title ↑</option>
+                    <option value="rating_asc_title_asc">Rating ↑, Title ↑</option>
+                    <option value="rating_desc_title_desc">Rating ↓, Title ↓</option>
+                    <option value="rating_asc_title_desc">Rating ↑, Title ↓</option>
+                    <option value="title_asc_rating_desc">Title ↑, Rating ↓</option>
+                    <option value="title_desc_rating_desc">Title ↓, Rating ↓</option>
+                    <option value="title_asc_rating_asc">Title ↑, Rating ↑</option>
+                    <option value="title_desc_rating_asc">Title ↓, Rating ↑</option>
+                </select>
+            </div>
+            <div class="sort-group">
+                <label>Per page:</label>
+                <select id="limit-select">
+                    <option value="10">10</option>
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Movie Table -->
+        <table class="movie-table" id="movie-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Director</th>
+                    <th>Genres</th>
+                    <th>Stars</th>
+                    <th>Rating</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="movie-table-body">
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <button class="btn btn-sm" id="prev-btn">← Prev</button>
+            <span id="page-info">Page 1</span>
+            <button class="btn btn-sm" id="next-btn">Next →</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/movie-list.js"></script>
+</body>
+</html>

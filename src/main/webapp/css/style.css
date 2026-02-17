@@ -1,0 +1,95 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; }
+
+/* Navbar */
+.navbar { background: #16213e; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.navbar .brand { color: #e94560; font-size: 24px; font-weight: bold; text-decoration: none; }
+.navbar .nav-links { display: flex; gap: 20px; align-items: center; }
+.navbar .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+.navbar .nav-links a:hover { color: #e94560; }
+.cart-badge { background: #e94560; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 12px; margin-left: 4px; }
+
+/* Login Page */
+.login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.login-box { background: #16213e; padding: 40px; border-radius: 10px; width: 400px; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+.login-box h1 { color: #e94560; text-align: center; margin-bottom: 30px; font-size: 28px; }
+.login-box .form-group { margin-bottom: 20px; }
+.login-box label { display: block; margin-bottom: 8px; color: #aaa; font-size: 14px; }
+.login-box input { width: 100%; padding: 12px; background: #0f3460; border: 1px solid #333; color: #eee; border-radius: 5px; font-size: 14px; }
+.login-box input:focus { outline: none; border-color: #e94560; }
+.login-box button { width: 100%; padding: 12px; background: #e94560; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+.login-box button:hover { background: #c73650; }
+.error-msg { color: #e94560; text-align: center; margin-top: 10px; font-size: 14px; display: none; }
+
+/* Main Page */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.main-sections { display: flex; gap: 30px; margin-top: 20px; }
+.section-card { background: #16213e; border-radius: 10px; padding: 25px; flex: 1; }
+.section-card h2 { color: #e94560; margin-bottom: 15px; font-size: 20px; }
+
+/* Search Form */
+.search-form .form-group { margin-bottom: 15px; }
+.search-form label { display: block; margin-bottom: 5px; color: #aaa; font-size: 13px; }
+.search-form input { width: 100%; padding: 10px; background: #0f3460; border: 1px solid #333; color: #eee; border-radius: 5px; }
+.search-form input:focus { outline: none; border-color: #e94560; }
+.btn { padding: 10px 20px; background: #e94560; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; }
+.btn:hover { background: #c73650; }
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+.btn-outline { background: transparent; border: 1px solid #e94560; color: #e94560; }
+.btn-outline:hover { background: #e94560; color: #fff; }
+
+/* Browse links */
+.genre-links, .title-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.genre-links a, .title-links a { color: #aaa; text-decoration: none; padding: 5px 12px; background: #0f3460; border-radius: 5px; font-size: 13px; transition: all 0.3s; }
+.genre-links a:hover, .title-links a:hover { background: #e94560; color: #fff; }
+
+/* Movie List Table */
+.movie-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.movie-table th { background: #0f3460; padding: 12px; text-align: left; color: #e94560; font-size: 14px; cursor: pointer; }
+.movie-table th:hover { color: #fff; }
+.movie-table td { padding: 12px; border-bottom: 1px solid #333; font-size: 14px; }
+.movie-table tr:hover { background: rgba(233,69,96,0.05); }
+.movie-table a { color: #5dade2; text-decoration: none; }
+.movie-table a:hover { text-decoration: underline; }
+
+/* Pagination */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px; padding: 15px; }
+.pagination select { padding: 5px; background: #0f3460; color: #eee; border: 1px solid #333; border-radius: 5px; }
+
+/* Sort controls */
+.controls-bar { display: flex; justify-content: space-between; align-items: center; background: #16213e; padding: 15px; border-radius: 10px; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
+.sort-group { display: flex; align-items: center; gap: 10px; }
+.sort-group label { color: #aaa; font-size: 13px; }
+.sort-group select { padding: 6px; background: #0f3460; color: #eee; border: 1px solid #333; border-radius: 5px; }
+
+/* Single Movie / Star */
+.detail-card { background: #16213e; border-radius: 10px; padding: 30px; margin-top: 20px; }
+.detail-card h1 { color: #e94560; margin-bottom: 15px; }
+.detail-card .info-row { margin-bottom: 10px; }
+.detail-card .info-label { color: #aaa; font-size: 13px; }
+.detail-card .info-value { font-size: 16px; }
+.detail-card .tag { display: inline-block; padding: 4px 12px; background: #0f3460; border-radius: 15px; margin: 3px; font-size: 13px; }
+.detail-card .tag a { color: #5dade2; text-decoration: none; }
+
+/* Cart */
+.cart-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.cart-table th { background: #0f3460; padding: 12px; text-align: left; color: #e94560; }
+.cart-table td { padding: 12px; border-bottom: 1px solid #333; }
+.cart-table input[type="number"] { width: 60px; padding: 5px; background: #0f3460; color: #eee; border: 1px solid #333; border-radius: 3px; text-align: center; }
+.cart-total { text-align: right; padding: 15px; font-size: 18px; color: #e94560; }
+
+/* Checkout */
+.checkout-form { max-width: 500px; margin: 20px auto; }
+.checkout-form .form-group { margin-bottom: 15px; }
+.checkout-form label { display: block; margin-bottom: 5px; color: #aaa; }
+.checkout-form input { width: 100%; padding: 10px; background: #0f3460; border: 1px solid #333; color: #eee; border-radius: 5px; }
+
+/* Confirmation */
+.confirmation { background: #16213e; border-radius: 10px; padding: 30px; text-align: center; margin-top: 20px; }
+.confirmation h2 { color: #27ae60; margin-bottom: 20px; }
+.confirmation-table { width: 80%; margin: 0 auto; border-collapse: collapse; }
+.confirmation-table th { background: #0f3460; padding: 10px; color: #e94560; }
+.confirmation-table td { padding: 10px; border-bottom: 1px solid #333; }
+
+/* Result info */
+.result-info { color: #aaa; font-size: 14px; margin-bottom: 10px; }
