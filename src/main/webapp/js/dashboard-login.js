@@ -1,33 +1,23 @@
 $(document).ready(function() {
-    $("#login-form").submit(function(event) {
+    $("#employee-login-form").submit(function(event) {
         event.preventDefault();
-
-        var recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-            $("#error-msg").text("Please complete the reCAPTCHA.").show();
-            return;
-        }
-
         $.ajax({
-            url: "../api/login",
+            url: "../api/employee-login",
             method: "POST",
             data: {
                 email: $("#email").val(),
-                password: $("#password").val(),
-                "g-recaptcha-response": recaptchaResponse
+                password: $("#password").val()
             },
             success: function(response) {
                 if (typeof response === "string") response = JSON.parse(response);
                 if (response.status === "success") {
-                    window.location.href = "main.html";
+                    window.location.href = "dashboard.html";
                 } else {
                     $("#error-msg").text(response.message).show();
-                    grecaptcha.reset();
                 }
             },
             error: function() {
                 $("#error-msg").text("Unable to connect to server.").show();
-                grecaptcha.reset();
             }
         });
     });

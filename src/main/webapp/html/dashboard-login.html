@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabflix - Login</title>
+    <title>Fabflix - Employee Dashboard Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
-            <h1>🎬 Fabflix</h1>
-            <form id="login-form">
+            <h1>🎬 Fabflix Dashboard</h1>
+            <p style="text-align:center; color:#aaa; margin-bottom:20px;">Employee Login</p>
+            <form id="employee-login-form">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter employee email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                <div class="form-group" style="display: flex; justify-content: center;">
-                    <div class="g-recaptcha" data-sitekey="6LdVKoIsAAAAAE2dI1ypTvRjaH3lVM3e79Xiy5j5"></div>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
                 </div>
                 <button type="submit">Login</button>
                 <div class="error-msg" id="error-msg"></div>
@@ -29,6 +26,6 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/dashboard-login.js"></script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabflix - Employee Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="brand">🎬 Fabflix Dashboard</a>
+        <div class="nav-links">
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Add Star Section -->
+        <div class="section-card" style="margin-bottom: 20px;">
+            <h2>⭐ Add New Star</h2>
+            <form class="search-form" id="add-star-form">
+                <div class="form-group">
+                    <label for="star-name">Star Name (required)</label>
+                    <input type="text" id="star-name" required placeholder="e.g. John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="star-birth-year">Birth Year (optional)</label>
+                    <input type="number" id="star-birth-year" placeholder="e.g. 1990">
+                </div>
+                <button type="submit" class="btn">Add Star</button>
+                <div id="add-star-msg" style="margin-top:10px;"></div>
+            </form>
+        </div>
+
+        <!-- Add Movie Section (uses stored procedure) -->
+        <div class="section-card" style="margin-bottom: 20px;">
+            <h2>🎬 Add New Movie</h2>
+            <form class="search-form" id="add-movie-form">
+                <div class="form-group">
+                    <label for="movie-title">Movie Title (required)</label>
+                    <input type="text" id="movie-title" required placeholder="e.g. The Matrix">
+                </div>
+                <div class="form-group">
+                    <label for="movie-year">Year (required)</label>
+                    <input type="number" id="movie-year" required placeholder="e.g. 1999">
+                </div>
+                <div class="form-group">
+                    <label for="movie-director">Director (required)</label>
+                    <input type="text" id="movie-director" required placeholder="e.g. Lana Wachowski">
+                </div>
+                <div class="form-group">
+                    <label for="movie-star">Star Name (required)</label>
+                    <input type="text" id="movie-star" required placeholder="e.g. Keanu Reeves">
+                </div>
+                <div class="form-group">
+                    <label for="movie-genre">Genre Name (required)</label>
+                    <input type="text" id="movie-genre" required placeholder="e.g. Sci-Fi">
+                </div>
+                <button type="submit" class="btn">Add Movie</button>
+                <div id="add-movie-msg" style="margin-top:10px;"></div>
+            </form>
+        </div>
+
+        <!-- Database Metadata Section -->
+        <div class="section-card">
+            <h2>📊 Database Metadata</h2>
+            <button class="btn" id="load-metadata-btn">Load Metadata</button>
+            <div id="metadata-content" style="margin-top: 15px;"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

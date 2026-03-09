@@ -15,9 +15,26 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
+        String requestURI = httpRequest.getRequestURI();
 
-        if (isUrlAllowed(httpRequest.getRequestURI())) {
+        if (isUrlAllowed(requestURI)) {
             chain.doFilter(request, response);
+            return;
+        }
+
+        // Check if this is a dashboard request
+        if (requestURI.contains("_dashboard") || requestURI.contains("/api/dashboard") || requestURI.contains("/api/employee-login")) {
+            HttpSession session = httpRequest.getSession(false);
+            if (session != null && session.getAttribute("employee") != null) {
+                chain.doFilter(request, response);
+            } else {
+                if (requestURI.contains("/api/")) {
+                    httpResponse.setContentType("application/json");
+                    httpResponse.getWriter().write("{\"status\":\"fail\",\"message\":\"Employee session expired. Please login.\"}");
+                } else {
+                    httpResponse.sendRedirect(httpRequest.getContextPath() + "/_dashboard");
+                }
+            }
             return;
         }
 
@@ -25,8 +42,7 @@ public class LoginFilter implements Filter {
         if (session != null && session.getAttribute("user") != null) {
             chain.doFilter(request, response);
         } else {
-            // For API calls, return JSON error
-            if (httpRequest.getRequestURI().contains("/api/")) {
+            if (requestURI.contains("/api/")) {
                 httpResponse.setContentType("application/json");
                 httpResponse.getWriter().write("{\"status\":\"fail\",\"message\":\"Session expired. Please login.\"}");
             } else {
@@ -45,6 +61,11 @@ public class LoginFilter implements Filter {
         allowedURIs.add("login.css");
         allowedURIs.add("/api/login");
         allowedURIs.add("style.css");
+        // Dashboard login pages
+        allowedURIs.add("/_dashboard");
+        allowedURIs.add("/api/employee-login");
+        allowedURIs.add("dashboard-login.html");
+        allowedURIs.add("dashboard-login.js");
     }
 
     public void destroy() {}
